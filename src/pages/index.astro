@@ -1,7 +1,59 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
+import HomepageTile from "@components/HomepageTile.astro";
 ---
 
 <Layout title="Dzienniczek Wezuwiusz">
-	<h1>Dzienniczek Wezuwiusz</h1>
+  <header
+    class="m-0 flex flex-row gap-8 justify-center items-center bg-[url('images/vesuvius.webp')] bg-cover bg-center p-16"
+  >
+    <img src="images/logo.svg" alt="Logo Dzienniczek Wezewiusz" />
+    <h1 class="text-[4rem] leading-tight text-white font-bold">Dzienniczek<br />Wezuwiusz</h1>
+  </header>
+  <main class="grid grid-cols-[4fr_6fr] gap-4 m-16">
+    <div>
+      <h2 class="font-bold text-3xl">Dzienniczek Wezuwiusz.</h2>
+      <p class="text-3xl">Darmowa i otwartoźłodłowa aplikacja do dziennika elektronicznego VULCAN.</p>
+    </div>
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-8">
+        <h2 class="font-bold text-3xl mb-4">Dlaczego?</h2>
+        <HomepageTile title="Zwiększona niezawodność." icon="mdi:shield-outline">
+          Dzienniczek Wezuwiusz został dogłębnie zaaktualizowany pod maską, a większość informacji jest pobierana z API
+          oficjalnej aplikacji dziennika. Oznacza to, że Wezuwiusza trudniej zablokować.
+        </HomepageTile>
+        <HomepageTile title="Logowanie e-mailem i hasłem." icon="mdi:key-outline">
+          Dzięki połączeniu scrappera z API Mobilnym nie musisz do Wezuwiusza logować się PIN-em, Tokenem i Symbolem.
+          Potrzebujesz tylko maila i hasła.
+        </HomepageTile>
+        <HomepageTile title="Wydajność." icon="mdi:speedometer">
+          Dzięki przepisaniu na API Mobilne aplikacja działa znacznie szybciej od Wulkanowego, który pobierał dane ze
+          strony dziennika.
+        </HomepageTile>
+        <HomepageTile title="Lepsza obsługa tabletów." icon="mdi:tablet">
+          Do naszej aplikacji dodano wiele usprawnień interfejsu użytkownika, która sprawiają, iż użytkowanie aplikacji
+          na tablecie jest przyjemniejsze.
+        </HomepageTile>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h2 class="font-bold text-3xl mb-4">Kontakt</h2>
+        <p>
+          Zapraszamy do dołączenia do naszego kanału na Telegramie, gdzie zamieszczamy wszelkie aktualizacje: <a
+            href="https://t.me/dzienniczekwezuwiusz">@dzienniczekwezuwiusz</a
+          >
+        </p>
+        <p>
+          Posiadamy również chat na Telegramie, gdzie możesz porozmawiać z innymi użytkownikami dziennika, oraz jego
+          twórcami. Jest to także najlepszy sposób na zdobycie pomocy: <a href="https://t.me/wezuwiuszchat"
+            >@wezuwiuszchat</a
+          >
+        </p>
+        <p>
+          Jeżeli nie posiadasz Telegrama, możesz się z nami skontaktować za pomocą emaila: <a
+            href="mailto:support@wezuwiusz.eu">support@wezuwiusz.eu</a
+          >
+        </p>
+      </div>
+    </div>
+  </main>
 </Layout>

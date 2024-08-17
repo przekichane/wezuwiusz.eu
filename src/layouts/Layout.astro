@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,15 +8,31 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Dzienniczek Wezuwiusz" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Dzienniczek Wezuwiusz" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="text-md-sys-color-on-surface bg-md-sys-color-surface dark:text-md-sys-color-dark-on-surface dark:bg-md-sys-color-dark-surface leading-relaxed"
+  >
+    <slot />
+  </body>
 </html>
+<style is:global>
+  a {
+    border-bottom: 1px solid theme("colors.md-sys-color.on-surface");
+    width: fit-content;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  a:hover,
+  a:active {
+    border-color: #58605900;
+  }
+</style>
